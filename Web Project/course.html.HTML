@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Website design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+ <section class="sub-header">
+
+<nav>
+    <a href=".HTML"><img src="C:\Users\Ayushi\Downloads\WhatsApp Image 2023-09-17 at 12.10.02 PM.jpeg"></a>
+    <div class="nav-links" id="navLinks">
+        <i class="fa-sharp fa-solid fa-circle-xmark" onclick="hidemenu()"></i>
+
+        <ul>
+            <li><a href=".HTML">HOME</a></li>
+            <li><a href="About.html.HTML">ABOUT</a></li>
+            <li><a href="course.html.HTML">COURSE</a></li>
+            <li><a href="Blog.html.HTML">BLOG</a></li>
+            <li><a href="contact.html.HTML">CONTACT</a></li>
+        </ul>
+
+    </div>
+<i class="fa-sharp fa-solid fa-bars" onclick="showmenu()"></i>
+</nav>
+<h1>Our Courses</h1>
+   </section>
+   <!----courses-->
+   <section class="course">
+    <h1>Courses we offer</h1>
+    <p>Computer science focuses on the development and testing of software and software systems. It involves working with mathematical models, data analysis and security, algorithms, and computational theory. Computer scientists define the computational principles that are the basis of all software.</p>
+<div class="row">
+    <div class="course-col">
+        <h3>Major Courses</h3>
+        <p>1. Computer Architecture</p>
+       <p>2. Java Programming</p>
+   <p> 3. Artificial Intelligence</p>
+<p>4. Computer Networking</p>
+    </div>
+
+    <div class="course-col">
+        <h3>Minor Courses</h3>
+        <p>1. Data Structure using C++</p>
+        <p>2. Oracle</p>
+        <p>3. Cyber Security</p>
+        <p>4. Big Data</p>
+    </div>
+    <div class="course-col">
+        <h3>Generic Elective</h3>
+        
+          <p>  1. Data Structure</p>
+          <p> 2. Operating System</p>
+          <p>3. PHP Programming</p>
+          <p>4. C++ Programming</p>
+            
+        
+    </div>
+    <div class="course-col">
+        <h3>Vocational Courses</h3>
+        
+           <p> 1. Data Science With Python</p>
+           <p> 2. Cloud Computing</p>
+    <p>3. Python Programming</p>
+           <p>4. Web Designing</p>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+</section>
+ 
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+           
+<!-----footer-->
+<section class="footer">
+    <h4>About Us</h4>
+<p>Learn more about some our recent research awards, alumini, events, and students accomplishment.</p>
+<div class="icons">
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-linkedin"></i>
+    <i class="fa-brands fa-instagram"></i>
+    
+</div>
+</section>
+
+   <!-----Javascript for toggle menu------>
+   <script>
+    var navLinks=document.getElementById("navLinks");
+    function showmenu(){
+        navLinks.style.right="0";
+    }
+    function hidemenu(){
+        navLinks.style.right="-200px";
+    }
+   </script>
+</body>
+</html>

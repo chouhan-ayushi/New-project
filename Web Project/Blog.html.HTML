@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Website design</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+ <section class="sub-header">
+
+<nav>
+    <a href=".HTML"><img src="C:\Users\Ayushi\Downloads\WhatsApp Image 2023-09-17 at 12.10.02 PM.jpeg"></a>
+    <div class="nav-links" id="navLinks">
+        <i class="fa-sharp fa-solid fa-circle-xmark" onclick="hidemenu()"></i>
+
+        <ul>
+            <li><a href=".HTML">HOME</a></li>
+            <li><a href="About.html.HTML">ABOUT</a></li>
+            <li><a href="course.html.HTML">COURSE</a></li>
+            <li><a href="Blog.html.HTML">BLOG</a></li>
+            <li><a href="contact.html.HTML">CONTACT</a></li>
+        </ul>
+
+    </div>
+<i class="fa-sharp fa-solid fa-bars" onclick="showmenu()"></i>
+</nav>
+<h1>Future Scope</h1>
+   </section>
+   <!-----blog page content-->
+   <section class="blog-content">
+<div class="row">
+    <div class="blog-left">
+<img src="blog new.jpg">
+<h2>Future Scope Of Computer Science</h2>
+<p>Computer Science courses, particularly degree programs, release a plethora of career opportunities in the IT sector.<br> Companies and organisations from various industry sectors are on a constant lookout for brilliant, innovative, and academic CS degree holders. Industries with high IT expert demand are the IT sector itself, Engineering & Manufacturing, Automobile, Content Industry, Sales & Marketing companies, Education Sector, Healthcare and Media Houses. 
+<br>
+<br>
+    Newer technologies are evolving every minute. This not only makes it critical to stay updated with the advanced technology for the companies but also essential for candidates to upgrade themselves.<br><br> <br>A working professional in the IT industry, for instance, can upgrade himself with a Master’s in CS and secure a better job position in a better company. Candidates now also have career prospects in new avenues related to the latest technologies such as Machine Learning, Data Science, Blockchain Development, Artificial Intelligence, Robotics, Augmented and Virtual Reality, Cloud and Big Data, Data Mining, Mobile app development, and Internet of Things (IoT). Computer science job opportunities are projected to grow, and better rewards and pay rates are also offered.</p>
+
+    <div id="comments-container">
+        <h2>Comments</h2>
+        <ul id="comments-list">
+        </ul>
+    </div>
+
+<div class="comment-box">
+    <h3>Leave a comment</h3>
+    <form id="comment-form">
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <textarea rows="5" name="comment" placeholder="Your comment" required></textarea>
+        <button type="submit" class="hero-btn red-btn">POST COMMENT</button>
+    </form>
+
+
+
+
+
+</div>
+    </div>
+    <div class="blog-right">
+<h3>Post Categories</h3>
+<div>
+    <span>Data Analytics</span>
+    <span>21</span>
+</div>
+<div>
+    <span>Data Science</span>
+    <span>11</span>
+</div>
+<div>
+    <span>PHP Programming</span>
+    <span>24</span>
+</div>
+<div>
+    <span>Python Programming</span>
+    <span>22</span>
+</div>
+<div>
+    <span>Cyber Security</span>
+    <span>26</span>
+</div>
+<div>
+    <span>Web Designing</span>
+    <span>28</span>
+</div>
+<div>
+    <span>Java Programming</span>
+    <span>27</span>
+</div>
+<div>
+    <span>Computer Networking</span>
+    <span>28</span>
+</div>
+<div>
+    <span>Computer Architecture</span>
+    <span>28</span>
+</div>
+<div>
+    <span>Computer Organization</span>
+    <span>28</span>
+</div>
+<div>
+    <span>Artificial Intelligence</span>
+    <span>28</span>
+</div>
+<div>
+    <span>C++ Programming</span>
+    <span>28</span>
+</div>
+    </div>
+</div>
+   </section>
+   
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+           
+<!-----footer-->
+<section class="footer">
+    <h4>About Us</h4>
+<p>Learn more about some our recent research awards, alumini, events, and students accomplishment.</p>
+<div class="icons">
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-linkedin"></i>
+    <i class="fa-brands fa-instagram"></i>
+    
+</div>
+</section>
+
+   <!-----Javascript for toggle menu------>
+   <script>
+    var navLinks=document.getElementById("navLinks");
+    function showmenu(){
+        navLinks.style.right="0";
+    }
+    function hidemenu(){
+        navLinks.style.right="-200px";
+    }
+
+    document.getElementById('comment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+
+            axios.post('http://localhost:4000/api/comments', formObject)
+                .then(response => alert('Comment posted successfully!'))
+                .catch(error => alert('Failed to post comment: ' + error.message));
+        });
+
+        function fetchComments() {
+            axios.get('http://localhost:4000/api/comments')
+                .then(response => {
+                    const commentsList = document.getElementById('comments-list');
+                    commentsList.innerHTML = ''; // Clear existing comments
+                    response.data.forEach(comment => {
+                        const commentItem = document.createElement('li');
+                        commentItem.textContent = `${comment.email} :  ${comment.comment}`;
+                        commentsList.appendChild(commentItem);
+                    });
+                })
+                .catch(error => console.error('Failed to fetch comments:', error));
+        }
+
+        // Call fetchComments on page load
+        window.onload = fetchComments;
+
+   </script>
+</body>
+</html>
